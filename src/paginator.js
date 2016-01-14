@@ -1,5 +1,0 @@
-export class paginator{
-  constructor(){
-    
-  }
-}

@@ -6,6 +6,7 @@ export class Winelist{
   constructor(api){
     this.api = api;
     this.wines = [];
+    this.currentPageNumber = 1;
 
   }
 
@@ -16,9 +17,14 @@ export class Winelist{
   // }
 
   activate(params){
-    console.log(params);
-    this.api.getWineList(params.id).then(wines=> {
+    this.currentPageNumber = params.id||1;
+    this.api.getWineList(this.currentPageNumber).then(wines=> {
       this.wines = wines;
     });
+    this.api.getWineCount().then( count=>{
+      this.totalPages = this.api.getTotalPages(count);      
+    });
+
+
   }
 }

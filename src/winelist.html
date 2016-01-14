@@ -1,5 +1,5 @@
 <template>
-    <require from="./paginator"></require>
+    <require from="./paginator.html"></require>
 <section>
   <div>
     <ul class="thumbnails" >
@@ -12,7 +12,7 @@
     </a>
   </li>
 </ul>
-<paginator/>
+<paginator page.bind="currentPageNumber" total.bind="totalPages"></paginator>
 </div>
 </section>
 </template>

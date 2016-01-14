@@ -1,6 +1,7 @@
 import {_} from "underscore";
 
 let latency=0;
+let pageSize = 8;
 
 let wines = [
       {
@@ -252,7 +253,7 @@ export class WebAPI{
     //check if page number has been passed or default to 1
     pageNum = pageNum||1;
     //default page size
-    let pageSize = 8;
+
     //calculate start index of the array. Array starts at zero but page number starts at 1
     let startIndex = (parseInt(pageNum,10) - 1)* pageSize;
     //calculate end index using the array length.
@@ -276,5 +277,20 @@ export class WebAPI{
         this.isRequesting = false;
       },latency);
     });
+  }
+
+  getWineCount(){
+    this.isRequesting = true;
+    return new Promise(resolve=>{
+      setTimeout(()=>{
+        let count = wines.length;
+        resolve(count);
+        this.isRequesting = false;
+      },latency);
+    });
+  }
+
+  getTotalPages(totalCount){        
+        return totalCount/pageSize;
   }
 }

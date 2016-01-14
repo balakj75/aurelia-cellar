@@ -1,8 +1,8 @@
-<template bindable="page,total">
+<template bindable="current,total">
   <section>
-    <div class="pagination pagination-centered">      
+    <div class="pagination pagination-centered">
     <ul>
-        <li  repeat.for="i of total" class="${i+1==page ? 'active' : ''}">
+        <li  repeat.for="i of total" class="${i+1==current ? 'active' : ''}">
           <a href="#wines/page/${i+1}">${i+1}</a>
         </li>
     </ul>

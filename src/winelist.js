@@ -10,19 +10,13 @@ export class Winelist{
 
   }
 
-  // activate(params) {
-  //   console.log(pageNumber);
-  //    this.wines = this.memoryStore.findAll();
-  //    return this.wines;
-  // }
-
   activate(params){
     this.currentPageNumber = params.id||1;
     this.api.getWineList(this.currentPageNumber).then(wines=> {
       this.wines = wines;
     });
     this.api.getWineCount().then( count=>{
-      this.totalPages = this.api.getTotalPages(count);      
+      this.totalPages = this.api.getTotalPages(count);
     });
 
 

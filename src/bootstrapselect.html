@@ -1,0 +1,8 @@
+
+<template>
+  <select class="selectpicker" id=${id+'-select'}>
+  <option repeat.for="option of options" value=${option.value?option.value:option.text}>
+    ${option.text}
+  </option>
+</select>
+</template>

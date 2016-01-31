@@ -1,11 +1,17 @@
 import {_} from "underscore";
+import {Wine} from "./wine";
 
 let latency=0;
 let pageSize = 8;
+let id = 0;
+
+function getId(){
+  return ++id;
+}
 
 let wines = [
       {
-          id: 1,
+          id: getId(),
           name: "CHATEAU DE SAINT COSME",
           year: "2009",
           grapes: "Grenache / Syrah",
@@ -15,7 +21,7 @@ let wines = [
           picture: "saint_cosme.jpg"
       },
       {
-          id: 2,
+          id: getId(),
           name: "LAN RIOJA CRIANZA",
           year: "2006",
           grapes: "Tempranillo",
@@ -25,7 +31,7 @@ let wines = [
           picture: "lan_rioja.jpg"
       },
       {
-          id: 3,
+          id: getId(),
           name: "MARGERUM SYBARITE",
           year: "2010",
           grapes: "Sauvignon Blanc",
@@ -35,7 +41,7 @@ let wines = [
           picture: "margerum.jpg"
       },
       {
-          id: 4,
+          id: getId(),
           name: "OWEN ROE \"EX UMBRIS\"",
           year: "2009",
           grapes: "Syrah",
@@ -45,7 +51,7 @@ let wines = [
           picture: "ex_umbris.jpg"
       },
       {
-          id: 5,
+          id: getId(),
           name: "REX HILL",
           year: "2009",
           grapes: "Pinot Noir",
@@ -55,7 +61,7 @@ let wines = [
           picture: "rex_hill.jpg"
       },
       {
-          id: 6,
+          id: getId(),
           name: "VITICCIO CLASSICO RISERVA",
           year: "2007",
           grapes: "Sangiovese Merlot",
@@ -65,7 +71,7 @@ let wines = [
           picture: "viticcio.jpg"
       },
       {
-          id: 7,
+          id: getId(),
           name: "CHATEAU LE DOYENNE",
           year: "2005",
           grapes: "Merlot",
@@ -75,7 +81,7 @@ let wines = [
           picture: "le_doyenne.jpg"
       },
       {
-          id: 8,
+          id: getId(),
           name: "DOMAINE DU BOUSCAT",
           year: "2009",
           grapes: "Merlot",
@@ -85,7 +91,7 @@ let wines = [
           picture: "bouscat.jpg"
       },
       {
-          id: 9,
+          id: getId(),
           name: "BLOCK NINE",
           year: "2009",
           grapes: "Pinot Noir",
@@ -95,7 +101,7 @@ let wines = [
           picture: "block_nine.jpg"
       },
       {
-          id: 10,
+          id: getId(),
           name: "DOMAINE SERENE",
           year: "2007",
           grapes: "Pinot Noir",
@@ -105,7 +111,7 @@ let wines = [
           picture: "domaine_serene.jpg"
       },
       {
-          id: 11,
+          id: getId(),
           name: "BODEGA LURTON",
           year: "2011",
           grapes: "Pinot Gris",
@@ -115,7 +121,7 @@ let wines = [
           picture: "bodega_lurton.jpg"
       },
       {
-          id: 12,
+          id: getId(),
           name: "LES MORIZOTTES",
           year: "2009",
           grapes: "Chardonnay",
@@ -125,7 +131,7 @@ let wines = [
           picture: "morizottes.jpg"
       },
       {
-          id: 13,
+          id: getId(),
           name: "ARGIANO NON CONFUNDITUR",
           year: "2009",
           grapes: "Cabernet Sauvignon",
@@ -135,7 +141,7 @@ let wines = [
           picture: "argiano.jpg"
       },
       {
-          id: 14,
+          id: getId(),
           name: "DINASTIA VIVANCO ",
           year: "2008",
           grapes: "Tempranillo",
@@ -145,7 +151,7 @@ let wines = [
           picture: "dinastia.jpg"
       },
       {
-          id: 15,
+          id: getId(),
           name: "PETALOS BIERZO",
           year: "2009",
           grapes: "Mencia",
@@ -155,7 +161,7 @@ let wines = [
           picture: "petalos.jpg"
       },
       {
-          id: 16,
+          id: getId(),
           name: "SHAFER RED SHOULDER RANCH",
           year: "2009",
           grapes: "Chardonnay",
@@ -165,7 +171,7 @@ let wines = [
           picture: "shafer.jpg"
       },
       {
-          id: 17,
+          id: getId(),
           name: "PONZI",
           year: "2010",
           grapes: "Pinot Gris",
@@ -175,7 +181,7 @@ let wines = [
           picture: "ponzi.jpg"
       },
       {
-          id: 18,
+          id: getId(),
           name: "HUGEL",
           year: "2010",
           grapes: "Pinot Gris",
@@ -185,7 +191,7 @@ let wines = [
           picture: "hugel.jpg"
       },
       {
-          id: 19,
+          id: getId(),
           name: "FOUR VINES MAVERICK",
           year: "2011",
           grapes: "Zinfandel",
@@ -195,7 +201,7 @@ let wines = [
           picture: "fourvines.jpg"
       },
       {
-          id: 20,
+          id: getId(),
           name: "QUIVIRA DRY CREEK VALLEY",
           year: "2009",
           grapes: "Zinfandel",
@@ -205,7 +211,7 @@ let wines = [
           picture: "quivira.jpg"
       },
       {
-          id: 21,
+          id: getId(),
           name: "CALERA 35TH ANNIVERSARY",
           year: "2010",
           grapes: "Pinot Noir",
@@ -215,7 +221,7 @@ let wines = [
           picture: "calera.jpg"
       },
       {
-          id: 22,
+          id: getId(),
           name: "CHATEAU CARONNE STE GEMME",
           year: "2010",
           grapes: "Cabernet Sauvignon",
@@ -225,7 +231,7 @@ let wines = [
           picture: "caronne.jpg"
       },
       {
-          id: 23,
+          id: getId(),
           name: "MOMO MARLBOROUGH",
           year: "2010",
           grapes: "Sauvignon Blanc",
@@ -235,7 +241,7 @@ let wines = [
           picture: "momo.jpg"
       },
       {
-          id: 24,
+          id: getId(),
           name: "WATERBROOK",
           year: "2009",
           grapes: "Merlot",
@@ -245,6 +251,7 @@ let wines = [
           picture: "waterbrook.jpg"
       }
 ];
+
 
 export class WebAPI{
 
@@ -290,7 +297,36 @@ export class WebAPI{
     });
   }
 
-  getTotalPages(totalCount){        
+  getTotalPages(totalCount){
         return totalCount/pageSize;
+  }
+
+  create(){
+    lastId++;
+    var newWine = new Wine();
+    newWine.id = getId();
+    wines[newWine.id] = newWine;
+    return newWine;
+  }
+
+  save(wine){
+    this.isRequesting = true;
+    return new Promise(resolve => {
+      setTimeout(() => {
+        let instance = JSON.parse(JSON.stringify(wine));
+        let found = wines.filter(x => x.id == wine.id)[0];
+
+        if(found){
+          let index = wines.indexOf(found);
+          wines[index] = instance;
+        }else{
+          instance.id = getId();
+          wines.push(instance);
+        }
+
+        this.isRequesting = false;
+        resolve(instance);
+      }, latency);
+    });
   }
 }

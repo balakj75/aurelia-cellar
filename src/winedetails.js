@@ -44,7 +44,7 @@ export class Winedetails{
 
   activate(params){
     this.id = params.id||1;
-    this.wine = this.api.getWineDetails(this.id).then(wine=> {
+    return this.api.getWineDetails(this.id).then(wine=> {
       this.wine = wine;
     });
   }
